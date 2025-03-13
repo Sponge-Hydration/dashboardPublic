@@ -1,0 +1,58 @@
+/* 🌟 Ultra-Modern Professional Sidebar 🌟 */
+
+/* Sidebar Container */
+.css-1d391kg {
+    background-color: #121418 !important;
+    color: #FFFFFF !important;
+    padding: 20px !important;
+    border-radius: 16px !important;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Sidebar Header Text */
+.css-1aumxhk {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #FFFFFF !important;
+    text-align: center;
+    margin-bottom: 15px !important;
+}
+
+/* Sidebar Navigation Buttons */
+/* Sidebar Buttons - Light Blue Translucent */
+.stButton>button {
+    width: 100%;
+    border-radius: 10px;
+    background: rgba(173, 216, 230, 0.3) !important; /* Light blue with transparency */
+    color: rgba(0, 0, 0, 0.7) !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    padding: 12px !important;
+    border: 1px solid rgba(173, 216, 230, 0.5) !important; /* Subtle light blue border */
+    transition: all 0.2s ease-in-out;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+}
+
+/* Sidebar Button Hover Effect */
+.stButton>button:hover {
+    background: rgba(173, 216, 230, 0.5) !important; /* Slightly more solid on hover */
+    border-color: rgba(173, 216, 230, 0.7) !important;
+}
+
+/* Active Button (When Clicked) */
+.stButton>button:active {
+    background: rgba(173, 216, 230, 0.8) !important;
+    border-color: #5A9ED6 !important;
+    color: #FFFFFF !important;
+}
+
+/* Sidebar Links */
+.css-1v0mbdj a {
+    color: #B0B3BA !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease-in-out;
+}
+
+.css-1v0mbdj a:hover {
+    color: #007
