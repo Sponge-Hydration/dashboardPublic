@@ -1,6 +1,5 @@
-import json
 import streamlit as st
-#import firebase_admin
+import firebase_admin
 from firebase_admin import credentials, auth
 #import pyrebase
 from firebase_setup import FireBaseApp
@@ -13,6 +12,16 @@ class FireBaseAuth:
         #self.auth_client = self.firebase.auth()
         self._setup_firebase_admin()
         self._setup_session_state()
+
+    def _setup_firebase_admin(self):
+        if not firebase_admin._apps:
+            try:
+                cred = credentials.Certificate(
+                    st.secrets["firebase_credentials"])
+                firebase_admin.initialize_app(cred)
+            except Exception as e:
+                st.error(f"Error initializing Firebase Admin SDK: {e}")
+                st.stop()
 
     def _setup_session_state(self):
         if "authenticated" not in st.session_state:
@@ -30,7 +39,7 @@ class FireBaseAuth:
             login = st.form_submit_button("Login")
             if login:
                 try:
-                    user = self.auth_client.sign_in_with_email_and_password(email, password)
+                    user = auth.sign_in_with_email_and_password(email, password)
                     st.session_state["authenticated"] = True  #only set to true if login successfull
                     st.session_state["user_email"] = user["email"]
                     st.session_state["id_token"] = user["idToken"]
