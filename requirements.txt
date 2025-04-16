@@ -53,7 +53,7 @@ pyarrow==19.0.0
 pyasn1==0.6.1
 pyasn1_modules==0.4.1
 pycparser==2.22
-pycrypto
+#pycrypto
 pycryptodome==3.21.0
 pydeck==0.9.1
 Pygments==2.19.1
