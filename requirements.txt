@@ -60,7 +60,7 @@ Pygments==2.19.1
 PyJWT==2.10.1
 Pympler==1.1
 pyparsing==3.2.1
-Pyrebase==3.0.18
+#Pyrebase==3.0.18
 Pyrebase4
 python-dateutil==2.9.0.post0
 python-decouple==3.8
