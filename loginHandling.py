@@ -1,23 +1,17 @@
 import json
 import streamlit as st
-#import firebase_admin
+import firebase_admin
 from firebase_admin import credentials, auth
-#import pyrebase
+import pyrebase
 from firebase_setup import FireBaseApp
 
 class FireBaseAuth:
     def __init__(self):
-        self._setup_firebase_admin()
+        #self._setup_firebase_admin()
+        self.firebase_config = st.secrets["firebase_config"]
+        self.firebase = pyrebase.initialize_app(self.firebase_config)
+        self.auth_client = self.firebase.auth()
         self._setup_session_state()
-
-    def _setup_firebase_admin(self):
-        if not firebase_admin._apps:
-            try:
-                cred = credentials.Certificate(st.secrets["firebase_credentials"])
-                firebase_admin.initialize_app(cred)
-            except Exception as e:
-                st.error(f"Error initializing Firebase Admin SDK: {e}")
-                st.stop()
 
     def _setup_session_state(self):
         if "authenticated" not in st.session_state:
@@ -28,6 +22,8 @@ class FireBaseAuth:
             st.session_state.screen = "login"
 
     def login(self):
+        st.title("Login to the Sponge Hydration Dashboard")
+
         st.title("Login to the Sponge Hydration Dashboard")
         with st.form('login'):
             email = st.text_input("Email", key="email_input")
