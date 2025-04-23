@@ -28,8 +28,8 @@ class App():
         self.data_clean = None #this also has to wait until authentication is complete
 
     def setup_page(self):
-        st.image("Sponge Logo Full.png")
         st.set_page_config(page_title="Sponge Hydration Dashboard", layout="wide")
+        st.image("Sponge Logo Full.png")
         self.load_sidebar_css()
 
     def load_sidebar_css(self):
